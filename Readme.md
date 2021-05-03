@@ -1,6 +1,6 @@
 # CoWIN Vaccine Availability
 
-###Usage:
+### Usage:
 
 ```
 python3 utils.py [pincode] [duration (in sec)] [freq (in Hz)] [cadence]
@@ -12,7 +12,7 @@ python3 utils.py [pincode] [duration (in sec)] [freq (in Hz)] [cadence]
 - cadence: the number of times the buzzer is going to buzz
 
 
-###Eg:
+### Eg:
 ```
 python3 utils.py 410206 1 440 3
 ```
