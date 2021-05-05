@@ -1,13 +1,14 @@
 """
-Usage: python3 utils.py [pincode] [duration (in sec)] [freq (in Hz)] [cadence] [sleep_time]
+Usage: python3 utils.py [pincode] [duration (in sec)] [freq (in Hz)] [cadence] [sleep_time] [num_days]
 
     pincode: pincode
     duration: duration of buzzer (buzzes if it finds availability of vaccines in that pincode)
     freq: sound frequency of buzzer
     cadence: the number of times the buzzer is going to buzz
     sleep_time: number of seconds to sleep before running the script again
+    num_days: number of days ahead of today to check for
 
-Eg: python3 utils.py 410206 1 440 3 60
+Eg: python3 utils.py 410206 1 440 3 60 5
     
 """
 
@@ -85,15 +86,16 @@ if __name__ == "__main__":
     import pyautogui
     
     """
-    Usage: python3 utils.py [pincode] [duration (in sec)] [freq (in Hz)] [cadence] [sleep_time]
+    Usage: python3 utils.py [pincode] [duration (in sec)] [freq (in Hz)] [cadence] [sleep_time] [num_days]
 
         pincode: pincode
         duration: duration of buzzer (buzzes if it finds availability of vaccines in that pincode)
         freq: sound frequency of buzzer
         cadence: the number of times the buzzer is going to buzz
         sleep_time: number of seconds to sleep before running the script again
+        num_days: number of days ahead of today to check for
 
-    Eg: python3 utils.py 410206 1 440 3 60
+    Eg: python3 utils.py 410206 1 440 3 60 5
         
     """
 
@@ -102,12 +104,14 @@ if __name__ == "__main__":
     freq = sys.argv[3]
     cadence = sys.argv[4]
     sleep_time = sys.argv[5]
+    num_days = sys.argv[6]
 
     while True:
         main(postcode=pincode,
             duration = duration,
             freq = freq,
-            cadence = cadence
+            cadence = cadence,
+            num_days=int(num_days)
             )
         pyautogui.press('shift')
         time.sleep(int(sleep_time))
